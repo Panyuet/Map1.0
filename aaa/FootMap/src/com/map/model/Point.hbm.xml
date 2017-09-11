@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.map.model.Point" table="t_point">
+	<id name="id">
+		<generator class="uuid"></generator>
+	</id>
+	<property name="x"></property>
+	<property name="y"></property>
+	<property name="city"></property>
+	<property name="mem"></property>
+	<property name="imagePath"></property>
+	<property name="imageName"></property>
+	<property name="userId"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<!-- com.map.actionForm.RegistForm -->
+<struts-config>
+
+<form-beans>
+  	<form-bean name="registForm" type="com.map.actionForm.RegistForm"></form-bean>
+  	<form-bean name="loginForm" type="com.map.actionForm.LoginForm"></form-bean>
+  	<form-bean name="uploadForm" type="com.map.actionForm.UploadForm"></form-bean>
+  	<form-bean name="modifyForm" type="com.map.actionForm.ModifyForm"></form-bean>
+ </form-beans>
+  <action-mappings>
+  
+  	<action path="/service" type="com.map.action.MyDispatcherAction" parameter="command">
+  		<forward name="pointDetail" path="/WEB-INF/jsp/pointDetail.jsp"/>
+  	</action>
+  	
+  	<action path="/regist" type="com.map.action.RegistAction" name="registForm">
+  		<forward name="success" path="/WEB-INF/jsp/registSuccess.jsp"></forward>
+  	</action>
+  	
+  	<action path="/login" type="com.map.action.LoginAction" name="loginForm">
+  		<forward name="success" path="/WEB-INF/jsp/loginSuccess.jsp"></forward>
+  		<forward name="fail" path="/WEB-INF/jsp/loginFail.jsp"></forward>
+  	</action>
+  	
+  	<action path="/upload" type="com.map.action.UploadAction" name="uploadForm">
+  	</action>
+ 
+ 	<action path="/modify" type="com.map.action.ModifyAction" name="modifyForm">
+  	</action>
+ 
+  	<action path="/additem" forward="/WEB-INF/jsp/pointAdd.jsp" name="itemForm"></action>
+  </action-mappings>
+  	
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+
